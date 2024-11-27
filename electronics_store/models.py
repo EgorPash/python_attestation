@@ -50,7 +50,7 @@ class Item(models.Model):
 
     name = models.CharField(max_length=200, **NULLABLE, verbose_name='Название продукта')
     model = models.CharField(max_length=200, **NULLABLE, verbose_name='Модель')
-    release_date = models.DateField()
+    release_date = models.DateTimeField(auto_now_add=True, verbose_name='Время выпуска')
     owner = models.ForeignKey(NetworkMember, on_delete=models.CASCADE)
     selling_price = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
 
